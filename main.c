@@ -15,7 +15,7 @@ char *ans[][4] = {{"Pokhara", "Kathmandu", "Dharan", "Janakpur"},
                   {"8848m", "8849m", "8000m", "8840m"},
                   {"Yuan", "Dollar", "Yen", "Rupees"},
                   {"Lumbini", "Kathmandu", "Biratnagar", "Janakpur"}};
-int correct[] = {2, 1, 3, 1};
+int correct[] = {1, 0, 2, 0};
 
 #define Nque sizeof(que) / sizeof(que[0])
 #define Nans sizeof(ans) / sizeof(ans[0])
@@ -41,7 +41,7 @@ int main(void) {
 
   int e;
   for (e = 0; e < Nque; e++) {
-    if (resp[e] == correct[e]) {
+    if (resp[e] == correct[e] + 1) {
       score += WINPOINT;
     }
   }
@@ -56,4 +56,4 @@ void clear(void) {
     system("cls");
 }
 
-void printScore(void) { printf("Score: %d\n\n", score); }
+void printScore(void) { printf("Score: %d\n", score); }
